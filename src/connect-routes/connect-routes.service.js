@@ -94,6 +94,7 @@ const parseParams = (path) => {
     return path;
   }
 
+  // replace deprecated methods
   const basePath = path.substr(0, paramIndex);
   const param = path.substr(paramIndex).replace(/[{}]/g, '');
 

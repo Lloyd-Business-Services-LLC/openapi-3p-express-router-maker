@@ -130,3 +130,5 @@ dist
 docs
 
 nohup.out
+
+.DS_STORE

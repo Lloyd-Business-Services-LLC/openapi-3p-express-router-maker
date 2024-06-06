@@ -94,7 +94,12 @@ const parseParams = (path) => {
     return path;
   }
 
-  // replaced deprecated substr() methods
+  /* replaced deprecated substr() methods
+  const basePath = path.substr(0, paramIndex);
+  const param = path.substr(paramIndex).replace(/[{}]/g, '');
+  
+  Does this work out of the box?
+  */
   const basePath = path.substring(0, paramIndex);
   const param = path.substring(paramIndex).replace(/[{}]/g, '');
 

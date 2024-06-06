@@ -25,10 +25,8 @@
     "node": ">=10.22.0"
   },
   "scripts": {
-    "test": "jest src/**/*.js"
   },
   "dependencies": {
-    "jest": "^29.7.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

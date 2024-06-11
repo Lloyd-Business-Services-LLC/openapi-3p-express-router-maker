@@ -1,4 +1,4 @@
-# OPENAPI-EXPRESS-ROUTER
+# OPENAPI-3P-EXPRESS-ROUTER-MAKER
 
 Forked from Alexander Davies' [original](https://github.com/AlexanderDavies/openapi-express-router), this is an update to support OpenAPI version 3.1.0 and remove support for Swagger (ver. 2). I've also updated two deprecated methods used in the original.
 
@@ -11,7 +11,7 @@ A simple package to build and connect Express routes based on an OpenAPI 3 or Op
 
 # Installation
 
-    npm install https://github.com/Lloyd-Business-Services-LLC/openapi-express-router
+    npm install https://github.com/Lloyd-Business-Services-LLC/openapi-3p-express-router-maker
 
 # Basic Usage
 

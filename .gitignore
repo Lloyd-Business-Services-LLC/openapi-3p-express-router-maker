@@ -122,3 +122,4 @@ docs
 nohup.out
 
 .DS_STORE
+.vscode

@@ -1,13 +1,14 @@
 'use strict';
 
 const healthMiddleware = (req, res, next) => {
-  req.body.hmSuccess = 'success';
+  //req.body.hmSuccess = 'success';
+  req.body ='success';
 
   next();
 };
 
 const updateUserMiddleware = (req, res, next) => {
-  req.body.mwSuccess = 'success!';
+  req.body = 'success!';
   next();
 };
 

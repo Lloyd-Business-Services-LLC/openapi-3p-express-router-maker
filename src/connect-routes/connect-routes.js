@@ -3,9 +3,9 @@
 const connectRoutesService = require('./connect-routes.service');
 
 /**
- * Parse an OpenAPI 3 or Swagger 2 specification and return a function to connect the controllers and middleware to the Express app.
+ * Parse an OpenAPI 3 specification and return a function to connect the controllers and middleware to the Express app.
  * @function
- * @param {object} openapi - an OpenAPI 3 or Swagger 2 specic/payload
+ * @param {object} openapi - an OpenAPI 3 specic/payload
  * @param {{controllers: object, middleware: object}} options - an options object containing the middleware and controllers to be connected.
  * @return {connectRoutes~connector} 
  */

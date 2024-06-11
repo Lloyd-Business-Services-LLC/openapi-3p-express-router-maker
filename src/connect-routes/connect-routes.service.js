@@ -63,18 +63,22 @@ const getBasePathFromServer = (openapi) => {
 /**
  * A function to extract the base path from the either an OpenAPI 3 or Swagger 2 specification
  * @function
- * @param {object} openapi - an OpenAPI 3 or Swagger 2 specification
+ * @param {object} openapi - an OpenAPI 3 or 3.1 specification
  * @param {Number} openApiVersion - the version of the OpenAPI specification
  * @return {String}
  */
 
 const getBasePath = (openapi, openApiVersion) => {
-  if (openApiVersion === 2) {
-    return [get(openapi, 'basePath', '')];
+  // we support 3 and 3.1 (for the moment)
+  if (openApiVersion === 3 || openApiVersion === 3.1) {
+    return getBasePathFromServer(openapi);
   }
 
-  if (openApiVersion === 3) {
-    return getBasePathFromServer(openapi);
+  // we deprioritize the check for anything other than ver. 3
+  // and void the return, so to speak (removing support)
+  if (openApiVersion != 3 || openApiVersion != 3.1) {
+    //return [get(openapi, 'basePath', '')];
+    return '';
   }
 
   return '';
@@ -94,12 +98,7 @@ const parseParams = (path) => {
     return path;
   }
 
-  /* replaced deprecated substr() methods
-  const basePath = path.substr(0, paramIndex);
-  const param = path.substr(paramIndex).replace(/[{}]/g, '');
-  
-  Does this work out of the box?
-  */
+  // replaced deprecated substr() methods
   const basePath = path.substring(0, paramIndex);
   const param = path.substring(paramIndex).replace(/[{}]/g, '');
 
@@ -192,17 +191,21 @@ const formatPaths = (paths, controllers, middleware) => {
  */
 
 const getApiVersion = (openapi) => {
-  let openapiVersion = get(openapi, 'swagger');
+  // default to ver 3+ (removing ver. 2/"swagger" support)
+  let openapiVersion = get(openapi, 'openapi');
 
+  // we'll check for undefined (ver.2 presumably) and return undefined
   if (!openapiVersion) {
-    openapiVersion = get(openapi, 'openapi');
+    //openapiVersion = get(openapi, 'openapi');
+    openapiVersion = undefined;
   }
 
   if (!openapiVersion || typeof openapiVersion !== 'string') {
     throw new Error('OpenAPI version is not defined');
   }
 
-  return +openapiVersion.charAt(0);
+  // we now return (as a number) the first 3 characters of the version string
+  return +openapiVersion.substring(0,3);
 };
 
 module.exports = {

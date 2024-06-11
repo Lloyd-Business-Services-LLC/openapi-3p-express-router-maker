@@ -1,8 +1,8 @@
 # OPENAPI-EXPRESS-ROUTER
 
-Forked from [Alexander Davies' original](https://github.com/AlexanderDavies/openapi-express-router)
+Forked from [Alexander Davies' original](https://github.com/AlexanderDavies/openapi-express-router), this is an update to support OpenAPI version 3.1.0 and remove support for Swagger (ver. 2). I've also updated two deprecated methods used in the original.
 
-An simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 JSON spec.
+A simple package to build and connect Express routes based on an OpenAPI 3 or OpenAPI 3.1 JSON spec.
 
 # Prerequisites
 
@@ -11,11 +11,7 @@ An simple package to build and connect Express routes based on an OpenAPI 3 or S
 
 # Installation
 
-    npm install openapi-express-router
-    
-    // OR
-    
-    yarn add openapi-express-router
+    npm install https://github.com/Lloyd-Business-Services-LLC/openapi-express-router
 
 # Basic Usage
 
@@ -37,6 +33,7 @@ An simple package to build and connect Express routes based on an OpenAPI 3 or S
     const connect = connectRoutes(openApi, options);
 
     connect(app);
+    app.listen(8888);
 
 # Connecting Controllers
 

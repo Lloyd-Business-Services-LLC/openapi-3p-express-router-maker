@@ -1,6 +1,6 @@
 {
   "name": "openapi-express-router",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 JSON spec",
   "main": "src/index.js",
   "keywords": [

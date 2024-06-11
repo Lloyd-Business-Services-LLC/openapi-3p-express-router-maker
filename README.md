@@ -1,5 +1,7 @@
 # OPENAPI-EXPRESS-ROUTER
 
+Forked from (Alexander Davies' original)[https://github.com/AlexanderDavies/openapi-express-router]
+
 An simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 JSON spec.
 
 # Prerequisites
